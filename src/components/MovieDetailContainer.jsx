@@ -19,7 +19,7 @@ const MovieDetailContainer = ({movie}) => {
           <h3 className=' text-2xl font-extrabold'>{movie.title}</h3>
           <h4 className=' text-gray-400  font-medium text-base'>{movie.original_title}</h4>
           <h4 className=' text-gray-400 font-medium text-sm'>Runtime {movie.running_time} min</h4>
-          <p className=' text-gray-600 mt-6 line-clamp-[10]'>{movie.description}</p>
+          <p className=' text-gray-600 mt-6 line-clamp-[5]'>{movie.description}</p>
           <div className='flex  items-center justify-between mt-8'>
             <button className=' bg-black text-sm font-semibold uppercase text-white px-5 py-3  
             rounded-3xl cursor-pointer'>Add Favorites</button>

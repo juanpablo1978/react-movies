@@ -4,12 +4,17 @@ import {
     emailField,
     passwordField,
 } from "../helpers/formValidations";
+import { useSelector,useDispatch } from 'react-redux';
+import { login } from '../store/slice/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const LoginPage = () => {
 
     const URL = "https://fake-login-api-production.up.railway.app/api/auth/login";
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -50,6 +55,11 @@ const LoginPage = () => {
             });
             const data = await response.json();
             console.log(data);
+
+            if(data.ok){
+                dispatch(login(data.user));
+                navigate('/home');
+            }
         }
     };
 
